@@ -10,7 +10,7 @@ public class WikimediaChangesHandler implements EventHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaChangesHandler.class);
     private KafkaTemplate<String, String> kafkaTemplate;
-    private final String topic;
+    private String topic;
 
     public WikimediaChangesHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
         this.kafkaTemplate = kafkaTemplate;

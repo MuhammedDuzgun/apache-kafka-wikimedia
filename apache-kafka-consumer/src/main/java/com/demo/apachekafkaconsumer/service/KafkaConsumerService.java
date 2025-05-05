@@ -18,8 +18,8 @@ public class KafkaConsumerService {
     }
 
     @KafkaListener(
-            topics = "wikimedia_recentchange",
-            groupId = "myGroup"
+            topics = "${app.value.topic.name}",
+            groupId = "${app.value.topic.groupid}"
     )
     public void consume(String message) {
         LOGGER.info("Event message received -> " +message);
